@@ -22,6 +22,8 @@ const resultText = () => {
 			secondPlayer.setAttribute("data-rnd", '');
 			secondPlayer.setAttribute("src", "./images/dice1.png");
 			title.textContent = "Click your dice";
+			isClickableFirst = true;
+			isClickableSecond = true;
 		}, 3000);
 	}
 };
@@ -53,18 +55,10 @@ firstPlayer.addEventListener("click", () => {
 	rndDice(firstPlayer);
 
 	isClickableFirst = false;
-
-	setTimeout(() => {
-		isClickableFirst = true;
-	}, 3000);
 });
 secondPlayer.addEventListener("click", () => {
 	if (!isClickableSecond) return;
 	rndDice(secondPlayer);
 
 	isClickableSecond = false;
-
-	setTimeout(() => {
-		isClickableSecond = true;
-	}, 3000);
 });
